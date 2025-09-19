@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Edu+QLD+Beginner:wght@400..700&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Wrapper */
+.onboarding-wrapper {
+  font-family: var(--font-dm-sans), sans-serif;
+  background-color: #F8F8F8;
+}
+
+
+.error {
+  color: red;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.accept {
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+
+/* Fixed Navbar */
+.onboarding-navbar {
+  width: 100%;
+  height: 88px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  box-shadow: 0 4px 12px rgba(248, 248, 248, 0.6);
+
+}
+
+/* Navbar text */
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #222;
+  padding-left: 95px;
+}
+
+
+/* Stepper */
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: auto 160px;
+  position: relative;
+  padding: 20px;
+}
+
+.step-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  z-index: 1;
+}
+
+.step-circle {
+  cursor: pointer;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ccc;
+  z-index: 1;
+}
+
+.step-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: repeating-linear-gradient(to right,
+      #ff6600,
+      #ff6600 6px,
+      transparent 6px,
+      transparent 12px);
+  /* dotted stroke */
+  z-index: -1;
+}
+
+.step-circle.active {
+  background: rgb(255, 115, 0);
+  border-color: rgb(255, 115, 0);
+  color: white;
+}
+
+.step-circle.inactive {
+  border: none;
+  background: #D1D1D1;
+  color: rgb(255, 255, 255);
+}
+
+.step-label {
+  margin-top: 8px;
+  font-size: 12px;
+  text-align: center;
+  color: #555;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+input::placeholder {
+  font-weight: 400;
+  color: #8A8A8A;
+}
+
+.step-label.active {
+  font-weight: bold;
+}
+
+/* Form Section */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1290px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  height: fit-content;
+  align-items: start;
+}
+
+
+/* For screens smaller than 768px (e.g., tablets and smaller) */
+@media (max-width: 900px) {
+  .form-container {
+    width: 100vh;
+  }
+
+  .form {
+    grid-template-columns: repeat(2, 1fr);
+    /* Two equal columns */
+  }
+}
+
+/* For screens smaller than 480px (e.g., mobile phones) */
+@media (max-width: 600px) {
+  .form-container {
+    width: 500px;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 300px) {
+  .form-container {
+    width: 200px;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-footer {
+  margin: auto;
+  flex: 1;
+}
+
+.constraints {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-dm-sans), sans-serif;
+  font-weight: 400;
+  color: #8A8A8A;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+}
+
+.form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #181818;
+  line-height: 16px;
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+.form input{
+  width: 100%;
+  height: 50px;
+  padding: 16px;
+  margin-top: 6px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #F8F8F8;
+  color: #000000;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.required-label::before {
+  content: "*";
+  color: red;
+  margin-left: 4px;
+  padding: 2px;
+}
+
+select{
+  width: 100%;
+  height: 50px;
+  padding: 16px;
+  margin-top: 6px;
+  font-size: 14px;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #F8F8F8;
+  color: #6B6B6B;
+  -webkit-appearance: none; /* For WebKit browsers like Chrome and Safari */
+  -moz-appearance: none;    /* For Mozilla Firefox */
+  appearance: none;         /* Standard property */
+  padding: 8px 12px;
+}
+
+
+input[type="file"]::file-selector-button {
+  cursor: pointer;
+  opacity: 0;
+  content: 'none';
+}
+
+input[type='file'] {
+  color: transparent;
+}
+
+.file-logo {
+  color: #ff6600;
+}
+
+.file-type {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  margin: auto;
+  bottom: 55px;
+}
+
+.file-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.form .file {
+  font-weight: 100;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: rgb(255, 115, 0);
+  border-width: 3px;
+  box-shadow: none;
+  /* Remove any shadow */
+}
+
+
+/* Next Button */
+.next-btn {
+  background: #000000;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.next-btn:hover {
+  background: #4c4c4c;
+}
+
+.terms-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.term-check {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.terms-content {
+  height: 260px;
+  padding: 0px 50px;
+  font-weight: 400px;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.terms-text {
+  font-weight: 600;
+  height: fit-content;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0%;
+}
+
+.successpage {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+}
+
+.success-text {
+  width: 703px;
+  height: 100px;
+  top: 351px;
+  left: 293px;
+  font-weight: 600px;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  font-family: "Mukta", sans-serif;
+}
+
+.success-sign {
+  margin-left: 400px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  text-align: center;
+  font-family: "Edu QLD Beginner", cursive;
+}

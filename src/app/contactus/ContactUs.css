@@ -1,0 +1,43 @@
+.container {
+    background: url('/gradient.svg');
+    height: 100vh;
+    width: 100%;
+    opacity: 100%;
+    padding-top: 20px;
+}
+
+.form {
+    margin: 50px auto;
+    flex: 1;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow:
+        -4px 4px 10px rgba(0, 0, 0, 0.1),
+        /* left */
+        4px 4px 10px rgba(0, 0, 0, 0.1),
+        /* right */
+        0 6px 12px rgba(0, 0, 0, 0.15);
+    /* bottom */
+    padding: 10px 10px;
+    width: 400px;
+    height: fit-content;
+}
+
+.form-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM sans';
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 120%;
+    letter-spacing: 20%;
+    text-align: center;
+}
+
+.form-submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
